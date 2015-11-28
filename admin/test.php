@@ -13,7 +13,7 @@ require_once(".././include/initialize.php");
     //$header  = curl_getinfo( $ch );
     //curl_close( $ch );
 
-    //echo $content;
+    //echo $content; ionut github
     echo SyncSite::modalitate("Imobiliare");
     echo SyncSite::modalitate("Imopedia");
     echo SyncSite::modalitate("SimsParkman");
