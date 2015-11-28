@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"
+/>
+<style type="text/css">
+<!--
+..rowBorder {
+border-right: 1px solid #666666;
+border-bottom: 1px solid #666666;
+}
+
+table{
+font-family: verdana;
+font-size: 8pt;
+}
+
+-->
+</style>
+
+
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+var clicked = '';
+//var currentRowId = '';
+
+
+function rowOver(which, what) {
+	//alert(which);
+	var changed = document.getElementById(which);
+	//alert(changed);
+	if (which != clicked) {
+		if (what == 1)
+			changed.style.backgroundColor = '#D5DDE9';
+		else{
+			if(which%2)
+				changed.style.backgroundColor = '#ffffff';
+			else
+				changed.style.backgroundColor = '#CCCCCC';
+		}
+	}
+}
+
+
+function resetRow(which) {
+	var changed = document.getElementById(which);
+	if(which%2)
+		changed.style.backgroundColor = '#ffffff';
+	else
+		changed.style.backgroundColor = '#CCCCCC';
+}
+
+function changeSelect(which) {
+var changed = document.getElementById(which);
+changed.style.backgroundColor = '#DDEEFF';
+changed.onMouseOver = '';
+changed.onMouseOut = '';
+}
+function selectRow(which) { //,rowIndex
+if (clicked != '') {
+//alert('1');
+resetRow(clicked);
+clicked = which;
+changeSelect(which);
+} else if (clicked == '') {
+//alert('2');
+clicked = which;
+changeSelect(which);
+}
+//currentRowId = rowIndex;
+}
+function deSelectRow(which) {
+resetRow(which);
+clicked = '';
+}
+//]]>
+</script>
+</head>
+
+<body>
+<table width="560" height="160" cellpadding="0" cellspacing="0"
+border="0">
+<tr>
+<td class="rowBorder" id="columnHeader" style="width:
+18%;padding: 2px; font-weight: bold; border-top: 1px solid
+#666666;border-left: 1px solid #666666">
+Col 1</td>
+<td class="rowBorder" id="columnHeader" style="width:
+26%;padding: 2px; font-weight: bold; border-top: 1px solid #666666">
+Col 2</td>
+<td class="rowBorder" id="columnHeader" style="width:
+28%;padding: 2px; font-weight: bold; border-top: 1px solid #666666">
+Col 3</td>
+<td class="rowBorder" id="columnHeader" style="width:
+28%;padding: 2px; font-weight: bold; border-top: 1px solid #666666">Col
+4</td>
+</tr>
+<tr id="1" style="background-color: #DDEEFF"
+onmouseover="rowOver('1',1); this.style.cursor='arrow'"
+onmouseout="rowOver('1',0)" onclick="selectRow('1')"
+ondblclick="deSelectRow('1')">
+<td class="rowBorder" style="width: 18%;padding: 2px; text-align:
+center;border-left: 1px solid #666666"">...</td>
+<td class="rowBorder" style="width: 26%;padding: 2px; text-align:
+center;">...</td>
+<td class="rowBorder" style="width: 28%;padding: 2px; text-align:
+center;">...</td>
+<td class="rowBorder" style="width: 28%;padding: 2px; text-align:
+center;">...</td>
+</tr>
+<tr id="2" style="background-color: #CCCCCC"
+onmouseover="rowOver('2',1); this.style.cursor='arrow'"
+onmouseout="rowOver('2',0)" onclick="selectRow('2')"
+ondblclick="deSelectRow('2')">
+<td class="rowBorder" style="width: 18%;padding: 2px; text-align:
+center;border-left: 1px solid #666666"">...</td>
+<td class="rowBorder" style="width:26%;padding: 2px; text-align:
+center;">...</td>
+<td class="rowBorder" style="width: 28%;padding: 2px; text-align:
+center;">...</td>
+<td class="rowBorder" style="width: 28%;padding: 2px; text-align:
+center;">...</td>
+</tr>
+<tr id="3" style="background-color: #FFFFFF"
+onmouseover="rowOver('3',1); this.style.cursor='arrow'"
+onmouseout="rowOver('3',0)" onclick="selectRow('3')"
+ondblclick="deSelectRow('3')">
+<td class="rowBorder" style="width: 18%;padding: 2px; text-align:
+center;border-left: 1px solid #666666"">...</td>
+<td class="rowBorder" style="width: 26%;padding: 2px; text-align:
+center;">...</td>
+<td class="rowBorder" style="width: 28%;padding: 2px; text-align:
+center;">...</td>
+<td class="rowBorder" style="width: 28%;padding: 2px; text-align:
+center;">...</td>
+</tr>
+</table>
+
+</body>
+</html>
